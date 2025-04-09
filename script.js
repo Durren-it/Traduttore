@@ -56,8 +56,6 @@ langButtons.forEach(button => {
         const lang = button.dataset.lang;
         const flag = button.innerHTML;
 
-        console.log('lang = ' + lang);
-
         if (text == '') {
             alert('Inserisci un testo da tradurre!');
         } else {
