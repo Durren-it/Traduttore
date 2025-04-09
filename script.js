@@ -9,7 +9,7 @@ const resetButton = document.querySelector('.reset-button');
 function reset() {
     textInput.value = '';
     translationText.innerText = 'Traduzione';
-    translationFlag = '';
+    translationFlag.innerHTML = '';
 }
 
 // funzione chiama API WEB
@@ -20,7 +20,7 @@ async function translate(text, lang, flag) {
     const result = jsonData.responseData.translatedText;
 
     translationText.innerText = result;
-    translationFlag.innerText = flag;
+    translationFlag.innerHTML = flag;
 }
 
 // attaccare eventi ai bottoni
@@ -30,7 +30,7 @@ langButtons.forEach(button => {
     button.addEventListener('click', () => {
         const text = textInput.value;
         const lang = button.dataset.lang;
-        const flag = button.innerText;
+        const flag = button.innerHTML;
 
         if (text == '') {
             alert('Inserisci un testo da tradurre!');
