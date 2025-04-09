@@ -10,6 +10,7 @@ function reset() {
     textInput.value = '';
     translationText.innerText = 'Traduzione';
     translationFlag.innerHTML = '';
+    document.body.style.backgroundImage = '';
 }
 
 // funzione chiama API WEB
@@ -21,6 +22,17 @@ async function translate(text, lang, flag) {
 
     translationText.innerText = result;
     translationFlag.innerHTML = flag;
+}
+
+// funzione di settaggio di immagine background
+function changeBackground(lang) {
+    if (lang === 'en') {
+        document.body.style.backgroundImage = "url('images/united-kingdom.png')"
+    } else if (lang === 'fr') {
+        document.body.style.backgroundImage = "url('images/france.png')"
+    } else if (lang === 'es') {
+        document.body.style.backgroundImage = "url('images/spain.png')"
+    }
 }
 
 // attaccare eventi ai bottoni
@@ -36,6 +48,7 @@ langButtons.forEach(button => {
             alert('Inserisci un testo da tradurre!');
         } else {
             translate(text, lang, flag);
+            changeBackground(lang);
         }
     })
-});
+})

@@ -7,6 +7,10 @@
 body {
     padding: 16px;
     background-color: rgb(234, 237, 240);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 50%;
 }
 
 h1 {
@@ -47,6 +51,11 @@ header {
     background-color: rgb(70, 100, 242);
     padding: 16px;
     border-radius: 16px;
+}
+
+.default-bg {
+    background-color: rgb(234, 237, 240);
+    background-image: none;
 }
 
 .translation {
