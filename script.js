@@ -27,11 +27,11 @@ async function translate(text, lang, flag) {
 // funzione di settaggio di immagine background
 function changeBackground(lang) {
     if (lang === 'en') {
-        document.body.style.backgroundImage = "url('images/united-kingdom.png')"
+        document.body.style.backgroundImage = "url('images/united-kingdom512.png')"
     } else if (lang === 'fr') {
-        document.body.style.backgroundImage = "url('images/france.png')"
+        document.body.style.backgroundImage = "url('images/france512.png')"
     } else if (lang === 'es') {
-        document.body.style.backgroundImage = "url('images/spain.png')"
+        document.body.style.backgroundImage = "url('images/spain512.png')"
     }
 }
 

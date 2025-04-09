@@ -8,9 +8,9 @@ body {
     padding: 16px;
     background-color: rgb(234, 237, 240);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
     background-position: center;
-    background-size: 50%;
 }
 
 h1 {
@@ -75,7 +75,6 @@ header {
 }
 
 .translation-flag {
-    position: absolute;
     font-size: 32px;
 }
 
