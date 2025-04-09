@@ -4,6 +4,7 @@ const textInput = document.querySelector('.text-input');
 const translationText = document.querySelector('.translation-text');
 const translationFlag = document.querySelector('.translation-flag');
 const resetButton = document.querySelector('.reset-button');
+const randomButton = document.querySelector('.random-button');
 
 // funzione di reset
 function reset() {
@@ -35,14 +36,28 @@ function changeBackground(lang) {
     }
 }
 
+// funzione per prendere parola italiana a caso
+async function getRandomWord() {
+    const url = 'https://random-word-api.herokuapp.com/word?lang=it'
+    let response = await fetch(url);
+    let result = await response.text();
+    let resultPulito = result.replace(/[\[\]"]/g, '');
+    textInput.value = resultPulito;
+    return textInput.value;
+}
+
 // attaccare eventi ai bottoni
 resetButton.addEventListener('click', reset);
+
+randomButton.addEventListener('click', getRandomWord);
 
 langButtons.forEach(button => {
     button.addEventListener('click', () => {
         const text = textInput.value;
         const lang = button.dataset.lang;
         const flag = button.innerHTML;
+
+        console.log('lang = ' + lang);
 
         if (text == '') {
             alert('Inserisci un testo da tradurre!');
